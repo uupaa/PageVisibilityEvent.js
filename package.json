@@ -1,0 +1,20 @@
+{
+  "name":           "uupaa.pagevisibilityevent.js",
+  "version":        "0.8.0",
+  "description":    "PageVisibility event dispatcher.",
+  "url":            "https://github.com/uupaa/PageVisibilityEvent.js",
+  "keywords":       ["dom", "page visibility", "event", "browser", "util", "uupaa"],
+  "author":         "uupaa <uupaa.js@gmail.com>",
+  "license":        "MIT",
+  "repository":     { "type": "git", "url": "https://github.com/uupaa/PageVisibilityEvent.js.git" },
+  "contributors":   [],
+  "devDependencies": {
+    "uupaa.help.js": ">= 0.8.1"
+  },
+  "lib":            "./lib/",
+  "main":           "index.js",
+  "scripts": {
+    "start":        "npm install",
+    "test":         "open test/redirect.html"
+  }
+}
