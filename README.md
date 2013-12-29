@@ -1,7 +1,7 @@
-PageVisibility.js
+PageVisibilityEvent.js
 =========
 
-PageVisibility.js is event dispatcher.
+PageVisibilityEvent.js is event dispatcher.
 
 # Install, Setup modules
 
@@ -20,7 +20,7 @@ $ npm install
 ```sh
 $ npm test
 
-    > uupaa.pagevisibility.js@0.8.0 test /Users/username/path/PageVisibility.js
+    > uupaa.pagevisibilityevent.js@0.8.0 test /Users/username/path/PageVisibilityEvent.js
     > NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html
 
       :
@@ -31,5 +31,5 @@ $ npm test
 
 # API Document
 
-https://github.com/uupaa/PageVisibility.js/wiki/PageVisibility
+https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent
 
