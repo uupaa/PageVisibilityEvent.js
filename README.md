@@ -1,16 +1,7 @@
 PageVisibility.js
 =========
 
-PageVisibility event dispatcher
-
-```js
-PageVisibilityEvent.on(function(pageHide) {
-    console.log(pageHide ? "page hide" : "page show");
-});
-```
-
-PageVisibilityEvent は ブラウザの Page Visibility Event またはそれに類似したイベント(focus, blur)をハンドリングし、
-ページの切り替えをフックする機会を提供します。
+PageVisibility.js is event dispatcher.
 
 # Install, Setup modules
 
@@ -28,6 +19,17 @@ $ npm install
 
 ```sh
 $ npm test
+
+    > uupaa.pagevisibility.js@0.8.0 test /Users/username/path/PageVisibility.js
+    > NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html
+
+      :
+      :
+    test success.
+    ok.
 ```
 
+# API Document
+
+https://github.com/uupaa/PageVisibility.js/wiki/PageVisibility
 
