@@ -3,6 +3,10 @@ PageVisibilityEvent.js
 
 PageVisibilityEvent.js is event dispatcher.
 
+# API Document
+
+https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent
+
 # Install, Setup modules
 
 ```sh
@@ -28,8 +32,4 @@ $ npm test
     test success.
     ok.
 ```
-
-# API Document
-
-https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent
 
