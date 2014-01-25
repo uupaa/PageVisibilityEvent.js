@@ -10,26 +10,26 @@ https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent
 # Install, Setup modules
 
 ```sh
+$ brew install closure-compiler
+
 $ git clone git@github.com:uupaa/PageVisibilityEvent.js.git
 $ cd PageVisibilityEvent.js
 $ npm install
+```
 
-    npm http GET https://registry.npmjs.org/uupaa.task.js
-    npm http 200 https://registry.npmjs.org/uupaa.task.js
-    uupaa.task.js@0.8.0 node_modules/uupaa.task.js
+# Minify
+
+```sh
+$ npm start
+
+  or
+
+$ node node_modules/uupaa.minify.js --keep --output ./lib/PageVisibilityEvent.min.js ./lib/PageVisibilityEvent.js
 ```
 
 # Test
 
 ```sh
 $ npm test
-
-    > uupaa.pagevisibilityevent.js@0.8.0 test /Users/username/path/PageVisibilityEvent.js
-    > NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html
-
-      :
-      :
-    test success.
-    ok.
 ```
 

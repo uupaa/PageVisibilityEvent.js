@@ -1,52 +1,36 @@
 <!DOCTYPE html><html><head><title>test</title>
 <meta charset="utf-8"></head><body>
+
 <script src="../node_modules/uupaa.help.js/lib/Help.js"></script>
+<script src="../node_modules/uupaa.test.js/lib/Test.js"></script>
+<script src="../node_modules/uupaa.task.js/lib/Task.js"></script>
 <script src="../lib/PageVisibilityEvent.js"></script>
+<script src="./test.js"></script>
 <script>
   PageVisibilityEvent.on(function(pageHide) { // @arg Boolean:
-    console.log(event.type + ":" + (pageHide ? "page hide"
-                                             : "page show"));
-    document.title = pageHide ? "\u25a0"
-                              : "\u25b6"; // stop icon or play icon
+    document.title = pageHide ? "\u25a0"  // stop icon
+                              : "\u25b6"; // play icon
   });
 
-  window.onbeforeunload = function() {
-    return "leave?";
+  window.addEventListener("load",         function(event) { log(event.type); });
+  window.addEventListener("unload",       function(event) { log(event.type); });
+  window.addEventListener("beforeunload", function(event) { log(event.type); return "leave?"; });
+  window.addEventListener("pageshow",     function(event) { log(event.type); });
+  window.addEventListener("pageshow",     function(event) { log(event.type); });
+  window.addEventListener("pagehide",     function(event) { log(event.type); });
+  window.addEventListener("focus",        function(event) { log(event.type); });
+  window.addEventListener("blur",         function(event) { log(event.type); });
+  document.addEventListener("visibilitychange",       _visibilitychange);
+  document.addEventListener("webkitvisibilitychange", _visibilitychange);
+
+  function _visibilitychange(event) {
+    log(event.type + ":" + (document.webkitHidden ? "hidden" : "show"));
   }
 
-  // --- for debug ---
-  var windowID = (new Date()).getSeconds();
-
-  if (0) {
-    window.addEventListener("pageshow", function(event) { log(event.type); });
-    window.addEventListener("pagehide", function(event) { log(event.type); });
-    window.addEventListener("focus",    function(event) { log(event.type); });
-    window.addEventListener("blur",     function(event) { log(event.type); });
-    document.addEventListener("visibilitychange", function(event) { log(event.type + ":" + (document.hidden ? "hidden" : "show")); });
-    document.addEventListener("webkitvisibilitychange", function(event) { log(event.type + ":" + (document.webkitHidden ? "hidden" : "show")); });
-  }
   function log(msg) {
-    // add HTML
-    var p = document.createElement("p");
-    p.textContent = windowID + ":" + msg;
-    document.querySelector("#stage").appendChild(p);
-
-    // add Storage.item
-    var items = (window.localStorage.getItem("events") || "").split(",");
-    items.push(windowID + ":" + msg);
-    window.localStorage.setItem("events", items.join(","));
-  }
-  function dump() {
-    (window.localStorage.getItem("events") || "").split(",").forEach(function(event){
-      var p = document.createElement("p");
-      p.textContent = event;
-      document.querySelector("#stage").appendChild(p);
-    })
+    console.log(msg);
+    document.body.innerHTML += msg + "<br />";
   }
 </script>
-<input type="button" value="dump" onclick="dump()" />
-<input type="button" value="clear" onclick="localStorage.removeItem('events');document.querySelector('#stage').innerHTML='';" />
-<hr />
-<div id="stage"></div>
 </body></html>
 
