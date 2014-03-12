@@ -3,33 +3,48 @@ PageVisibilityEvent.js
 
 PageVisibilityEvent.js is event dispatcher.
 
-# API Document
+# Document
 
 https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent
 
-# Install, Setup modules
+# How to use
 
-```sh
-$ brew install closure-compiler
-
-$ git clone git@github.com:uupaa/PageVisibilityEvent.js.git
-$ cd PageVisibilityEvent.js
-$ npm install
+```js
+<script src="lib/PageVisibilityEvent.js">
+<script>
+// for Browser
+console.log( PageVisibilityEvent() );
+</script>
 ```
 
-# Minify
+# for Developers
 
-```sh
-$ npm start
+1. Install development dependency tools
 
-  or
+    ```sh
+    $ brew install closure-compiler
+    $ brew install node
+    $ npm install -g plato
+    ```
 
-$ node node_modules/uupaa.minify.js --keep --output ./lib/PageVisibilityEvent.min.js ./lib/PageVisibilityEvent.js
-```
+2. Clone Repository and Install
 
-# Test
+    ```sh
+    $ git clone git@github.com:uupaa/PageVisibilityEvent.js.git
+    $ cd PageVisibilityEvent.js
+    $ npm install
+    ```
 
-```sh
-$ npm test
-```
+3. Build and Minify
+
+    `$ npm run build`
+
+4. Test
+
+    `$ npm run test`
+
+5. Lint
+
+    `$ npm run lint`
+
 

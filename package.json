@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.pagevisibilityevent.js",
-  "version":        "0.8.8",
+  "version":        "0.8.9",
   "description":    "PageVisibility event dispatcher.",
   "url":            "https://github.com/uupaa/PageVisibilityEvent.js",
   "keywords":       ["dom", "page visibility", "event", "browser", "util", "uupaa"],
@@ -9,12 +9,22 @@
     "url":          "https://github.com/uupaa/PageVisibilityEvent.js.git"
   },
   "scripts": {
-    "start":        "node node_modules/uupaa.minify.js --keep --output ./lib/PageVisibilityEvent.min.js ./lib/PageVisibilityEvent.js",
-    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
+    "watch":        "node node_modules/uupaa.watch.js --verbose --action build ./lib/PageVisibilityEvent.js",
+    "build":        "node node_modules/uupaa.minify.js --keep --option 'formatting pretty_print' --output ./lib/PageVisibilityEvent.min.js ./lib/PageVisibilityEvent.js",
+    "build-release":"node node_modules/uupaa.minify.js --module all --output ./lib/PageVisibilityEvent.min.js",
+    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html",
+    "lint":         "plato --title PageVisibilityEvent.js --jshint .jshintrc -d lint/plato lib/PageVisibilityEvent.js; open lint/plato/index.html"
+  },
+  "build": {
+    "all": { "lib/PageVisibilityEvent.js": "" },
+    "node": { },
+    "worker": { },
+    "browser": { }
   },
   "dependencies": {
   },
   "devDependencies": {
+    "uupaa.valid.js":   "",
     "uupaa.help.js":    "",
     "uupaa.test.js":    "",
     "uupaa.task.js":    "",

@@ -8,14 +8,14 @@ function testAPI(next) {
     var result2 = PageVisibilityEvent.on(handler2);  // true
     var result3 = PageVisibilityEvent.on(handler2);  // false (already registered)
     var result4 = PageVisibilityEvent.off(handler3); // false (not registered)
-    var result5 = PageVisibilityEvent.off();         // true
+                  PageVisibilityEvent.clear();       // true
     var result6 = PageVisibilityEvent.off(handler1); // false (not registered)
 
     if ( result1 &&
          result2 &&
         !result3 &&
         !result4 &&
-         result5 &&
+       //result5 &&
         !result6) {
 
         console.log("testAPI ok");
