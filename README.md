@@ -13,7 +13,12 @@ https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent
 <script src="lib/PageVisibilityEvent.js">
 <script>
 // for Browser
-console.log( PageVisibilityEvent() );
+
+PageVisibilityEvent.on(function(pageHide) { // @arg Boolean: true is page-hide
+    console.log(pageHide ? "page hide"
+                         : "page show");
+});
+
 </script>
 ```
 
