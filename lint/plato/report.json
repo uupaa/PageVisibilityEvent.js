@@ -1,1 +1,63 @@
-{"summary":{"total":{"sloc":155,"maintainability":68.04070459087691},"average":{"sloc":155,"maintainability":"68.04"}},"reports":[{"info":{"file":"lib/PageVisibilityEvent.js","fileShort":"lib/PageVisibilityEvent.js","fileSafe":"lib_PageVisibilityEvent_js","link":"files/lib_PageVisibilityEvent_js/index.html"},"jshint":{"messages":0},"complexity":{"aggregate":{"line":30,"complexity":{"sloc":{"physical":155,"logical":81},"cyclomatic":21,"halstead":{"operators":{"distinct":20,"total":164,"identifiers":["__stripped__"]},"operands":{"distinct":83,"total":217,"identifiers":["__stripped__"]},"length":381,"vocabulary":103,"difficulty":26.144578313253014,"volume":2547.5567008568064,"effort":66604.79567300326,"bugs":0.8491855669522688,"time":3700.266426277959},"params":11}},"module":"lib/PageVisibilityEvent.js","maintainability":68.04070459087691}}]}
+{
+  "reports": [
+    {
+      "info": {
+        "file": "lib/PageVisibilityEvent.js",
+        "fileShort": "lib/PageVisibilityEvent.js",
+        "fileSafe": "lib_PageVisibilityEvent_js",
+        "link": "files/lib_PageVisibilityEvent_js/index.html"
+      },
+      "jshint": {
+        "messages": 0
+      },
+      "complexity": {
+        "aggregate": {
+          "line": 21,
+          "complexity": {
+            "sloc": {
+              "physical": 158,
+              "logical": 82
+            },
+            "cyclomatic": 22,
+            "halstead": {
+              "operators": {
+                "distinct": 20,
+                "total": 163,
+                "identifiers": [
+                  "__stripped__"
+                ]
+              },
+              "operands": {
+                "distinct": 82,
+                "total": 216,
+                "identifiers": [
+                  "__stripped__"
+                ]
+              },
+              "length": 379,
+              "vocabulary": 102,
+              "difficulty": 26.34146341463415,
+              "volume": 2528.8492046071965,
+              "effort": 66613.58880428714,
+              "bugs": 0.8429497348690655,
+              "time": 3700.7549335715075
+            },
+            "params": 11
+          }
+        },
+        "module": "lib/PageVisibilityEvent.js",
+        "maintainability": 68.03028040979551
+      }
+    }
+  ],
+  "summary": {
+    "total": {
+      "sloc": 158,
+      "maintainability": 68.03028040979551
+    },
+    "average": {
+      "sloc": 158,
+      "maintainability": "68.03"
+    }
+  }
+}
