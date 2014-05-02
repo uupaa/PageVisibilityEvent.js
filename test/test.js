@@ -8,7 +8,7 @@ return new Test({
         button:     false,
         both:       false,
         primary:    global["PageVisibilityEvent"],
-        secondary:  global["PageVisibilityEvent"],
+        secondary:  global["PageVisibilityEvent_"],
     }).add([
         testAPI,
     ]).run().clone();
@@ -48,3 +48,4 @@ function handler3(pageHide, eventType) { // @arg Boolean:
 }
 
 })((this || 0).self || global);
+
