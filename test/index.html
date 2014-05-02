@@ -1,37 +1,33 @@
 <!DOCTYPE html><html><head><title>test</title>
 <meta charset="utf-8"></head><body>
 
+<script id="worker" type="javascript/worker">
+onmessage = function(event) {
+    var BASE_DIR = event.data.BASE_DIR;
+
+    importScripts(BASE_DIR + "../node_modules/uupaa.console.js/lib/Console.js");
+    importScripts(BASE_DIR + "../node_modules/uupaa.valid.js/lib/Valid.js");
+    importScripts(BASE_DIR + "../node_modules/uupaa.task.js/lib/Task.js");
+    importScripts(BASE_DIR + "../node_modules/uupaa.test.js/lib/Test.js");
+    importScripts(BASE_DIR + "../lib/PageVisibilityEvent.js");
+    importScripts(BASE_DIR + "../release/PageVisibilityEvent.min.js");
+    importScripts(BASE_DIR + "./test.js");
+
+    self.postMessage({ error: self.errorMessage || "" });
+};
+</script>
+
 <script src="../node_modules/uupaa.valid.js/lib/Valid.js"></script>
 <script src="../node_modules/uupaa.help.js/lib/Help.js"></script>
 <script src="../node_modules/uupaa.task.js/lib/Task.js"></script>
 <script src="../node_modules/uupaa.test.js/lib/Test.js"></script>
 <script src="../lib/PageVisibilityEvent.js"></script>
+<script src="../release/PageVisibilityEvent.min.js"></script>
 <script src="./test.js"></script>
-<script>
-  PageVisibilityEvent.on(function(pageHide) { // @arg Boolean:
-    document.title = pageHide ? "\u25a0"  // stop icon
-                              : "\u25b6"; // play icon
-  });
+<script src="./page.js"></script>
+<p style="color:white">Try to switch the browser tab and focus.</p>
+<hr />
+<p style="color:white">Caught the events.</p>
 
-  window.addEventListener("load",         function(event) { log(event.type); });
-  window.addEventListener("unload",       function(event) { log(event.type); });
-  window.addEventListener("beforeunload", function(event) { log(event.type); return "leave?"; });
-  window.addEventListener("pageshow",     function(event) { log(event.type); });
-  window.addEventListener("pageshow",     function(event) { log(event.type); });
-  window.addEventListener("pagehide",     function(event) { log(event.type); });
-  window.addEventListener("focus",        function(event) { log(event.type); });
-  window.addEventListener("blur",         function(event) { log(event.type); });
-  document.addEventListener("visibilitychange",       _visibilitychange);
-  document.addEventListener("webkitvisibilitychange", _visibilitychange);
 
-  function _visibilitychange(event) {
-    log(event.type + ":" + (document.webkitHidden ? "hidden" : "show"));
-  }
-
-  function log(msg) {
-    console.log(msg);
-    document.body.innerHTML += msg + "<br />";
-  }
-</script>
 </body></html>
-

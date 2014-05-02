@@ -1,6 +1,17 @@
-new Test().add([
+var ModuleTest = (function(global) {
+
+return new Test({
+        disable:    false,
+        node:       false,
+        browser:    true,
+        worker:     false,
+        button:     false,
+        both:       false,
+        primary:    global["PageVisibilityEvent"],
+        secondary:  global["PageVisibilityEvent"],
+    }).add([
         testAPI,
-    ]).run();
+    ]).run().clone();
 
 function testAPI(next) {
 
@@ -36,3 +47,4 @@ function handler3(pageHide, eventType) { // @arg Boolean:
     console.log("3 " + eventType + ":" + (pageHide ? "page hide" : "page show"));
 }
 
+})((this || 0).self || global);
