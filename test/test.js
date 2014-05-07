@@ -1,14 +1,12 @@
-var ModuleTest = (function(global) {
+var ModuleTestPageVisibilityEvent = (function(global) {
 
-return new Test({
+return new Test("PageVisibilityEvent", {
         disable:    false,
-        node:       false,
         browser:    true,
         worker:     false,
+        node:       false,
         button:     false,
         both:       false,
-        primary:    global["PageVisibilityEvent"],
-        secondary:  global["PageVisibilityEvent_"],
     }).add([
         testAPI,
     ]).run().clone();
@@ -29,10 +27,8 @@ function testAPI(next) {
        //result5 &&
         !result6) {
 
-        console.log("testAPI ok");
         next && next.pass();
     } else {
-        console.log("testAPI ng");
         next && next.miss();
     }
 }
