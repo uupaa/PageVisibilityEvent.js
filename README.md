@@ -11,6 +11,7 @@ PageVisibilityEvent.js is event dispatcher.
 - [PageVisibilityEvent.js wiki](https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent)
 - [Development](https://github.com/uupaa/WebModule/wiki/Development)
 - [WebModule](https://github.com/uupaa/WebModule) ([Slide](http://uupaa.github.io/Slide/slide/WebModule/index.html))
+- [W3C spec](http://www.w3.org/TR/page-visibility/)
 
 
 # How to use
