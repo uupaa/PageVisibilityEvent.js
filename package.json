@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.pagevisibilityevent.js",
-  "version":        "0.8.18",
+  "version":        "0.8.19",
   "description":    "PageVisibility event dispatcher.",
   "url":            "https://github.com/uupaa/PageVisibilityEvent.js",
   "keywords":       ["dom", "page visibility", "event", "browser", "util", "uupaa", "WebModule", "Unstable"],
@@ -14,14 +14,14 @@
     "build-simple": "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty --nowrap --simple",
     "build-release":"node node_modules/uupaa.minify.js --verbose --strict --module",
     "test":         "npm run test-node; npm run test-browser",
-    "test-page":    "node node_modules/uupaa.test.js/bin/TestPage.js --verbose",
+    "x-test-page":  "node node_modules/uupaa.test.js/bin/TestPage.js --verbose",
     "test-debug":   "NODE_ENV=production NODE_PATH=lib node --debug-brk --harmony test/index.node.js",
     "test-node":    "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js",
     "test-browser": "open test/index.html",
     "lint":         "node node_modules/uupaa.plato.js; open lint/plato/index.html"
   },
   "x-build": {
-    "files":        ["lib/PageVisibilityEvent.js"],
+    "source":       ["lib/PageVisibilityEvent.js"],
     "output":       "release/PageVisibilityEvent.min.js",
     "target":       ["all"],
     "lables":       ["@dev"],

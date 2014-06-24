@@ -11,7 +11,7 @@ return new Test("PageVisibilityEvent", {
         testAPI,
     ]).run().clone();
 
-function testAPI(next) {
+function testAPI(test, pass, miss) {
 
     var result1 = PageVisibilityEvent.on(handler1);  // true
     var result2 = PageVisibilityEvent.on(handler2);  // true
@@ -27,9 +27,9 @@ function testAPI(next) {
        //result5 &&
         !result6) {
 
-        next && next.pass();
+        test.done(pass());
     } else {
-        next && next.miss();
+        test.done(miss());
     }
 }
 
