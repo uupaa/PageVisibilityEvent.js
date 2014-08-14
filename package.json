@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.pagevisibilityevent.js",
-  "version":        "0.8.19",
+  "version":        "0.8.20",
   "description":    "PageVisibility event dispatcher.",
   "url":            "https://github.com/uupaa/PageVisibilityEvent.js",
   "keywords":       ["dom", "page visibility", "event", "browser", "util", "uupaa", "WebModule", "Unstable"],
@@ -9,22 +9,29 @@
     "url":          "https://github.com/uupaa/PageVisibilityEvent.js.git"
   },
   "scripts": {
+    "init":         "npm update; npm run build",
     "watch":        "node node_modules/uupaa.watch.js --verbose --action build",
     "build":        "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty",
     "build-simple": "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty --nowrap --simple",
     "build-release":"node node_modules/uupaa.minify.js --verbose --strict --module",
     "test":         "npm run test-node; npm run test-browser",
-    "x-test-page":  "node node_modules/uupaa.test.js/bin/TestPage.js --verbose",
+    "test-page":    "",
     "test-debug":   "NODE_ENV=production NODE_PATH=lib node --debug-brk --harmony test/index.node.js",
     "test-node":    "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js",
     "test-browser": "open test/index.html",
+    "test-sim":     "node node_modules/uupaa.iphonesimulator.js --run --port 8585 --xcache --open test/index.html",
+    "server":       "http-server -c-1 -p 8585 &",
+    "server-stop":  "",
+    "server-kill":  "killall -- node /usr/local/bin/http-server -p 8585 ; exit 0",
+    "vup":          "npm node_modules/uupaa.webmoduleutility.js --verbose --patchversionup",
+    "hint":         "jshint lib/*.js",
     "lint":         "node node_modules/uupaa.plato.js; open lint/plato/index.html"
   },
   "x-build": {
     "source":       ["lib/PageVisibilityEvent.js"],
     "output":       "release/PageVisibilityEvent.min.js",
     "target":       ["all"],
-    "lables":       ["@dev"],
+    "lable":        ["@dev"],
     "module": {
       "develop":    ["uupaa.valid.js"],
       "release":    []
@@ -35,6 +42,7 @@
   "devDependencies": {
     "uupaa.nodemodule.js": "",
     "uupaa.reflection.js": "",
+    "uupaa.iphonesimulator.js": "",
     "uupaa.console.js": "",
     "uupaa.valid.js":   "",
     "uupaa.help.js":    "",
