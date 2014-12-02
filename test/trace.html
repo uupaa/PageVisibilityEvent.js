@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><title>event trace</title>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="utf-8">
+<style>
+span { border: 1px solid gray; margin: 2px; padding: 2px }
+span[value="load"] { background-color: lime; }
+span[value="unload"] { background-color: lime; }
+span[value="visibilitychange:show"] { color: blue; }
+span[value="visibilitychange:hidden"] { color: red; }
+</style></head><body>
+
+<script src="../lib/PageVisibilityEvent.js"></script>
+<script src="./trace.js"></script>
+
+<p style="color:gray">Page visibility event trace.</p>
+<p id="trace" style="color:gray"></p>
+
+</body></html>

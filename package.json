@@ -1,9 +1,9 @@
 {
   "name":           "uupaa.pagevisibilityevent.js",
-  "version":        "0.8.20",
+  "version":        "0.8.21",
   "description":    "PageVisibility event dispatcher.",
   "url":            "https://github.com/uupaa/PageVisibilityEvent.js",
-  "keywords":       ["dom", "page visibility", "event", "browser", "util", "uupaa", "WebModule", "Unstable"],
+  "keywords":       ["page visibility", "DOM", "Event", "Browser", "uupaa", "WebModule", "Unstable"],
   "repository": {
     "type":         "git",
     "url":          "https://github.com/uupaa/PageVisibilityEvent.js.git"
@@ -18,14 +18,15 @@
     "test-page":    "",
     "test-debug":   "NODE_ENV=production NODE_PATH=lib node --debug-brk --harmony test/index.node.js",
     "test-node":    "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js",
-    "test-browser": "open test/index.html",
+    "test-browser": "open http://localhost:8000/PageVisibilityEvent.js/test/index.html",
+    "test-sim":     "node node_modules/uupaa.webmoduleutility.js --test-sim --verbose",
     "test-sim":     "node node_modules/uupaa.iphonesimulator.js --run --port 8585 --xcache --open test/index.html",
-    "server":       "http-server -c-1 -p 8585 &",
-    "server-stop":  "",
-    "server-kill":  "killall -- node /usr/local/bin/http-server -p 8585 ; exit 0",
-    "vup":          "npm node_modules/uupaa.webmoduleutility.js --verbose --patchversionup",
+    "start":        "cd ../; Python -m SimpleHTTPServer 8000 &",
+    "stop":         "killall -- Python -m SimpleHTTPServer 8000",
+    "patch":        "node node_modules/uupaa.webmoduleutility.js --patched --verbose",
     "hint":         "jshint lib/*.js",
-    "lint":         "node node_modules/uupaa.plato.js; open lint/plato/index.html"
+    "lint":         "npm run coverage",
+    "coverage":     "node node_modules/uupaa.plato.js; open lint/plato/index.html"
   },
   "x-build": {
     "source":       ["lib/PageVisibilityEvent.js"],
@@ -42,7 +43,6 @@
   "devDependencies": {
     "uupaa.nodemodule.js": "",
     "uupaa.reflection.js": "",
-    "uupaa.iphonesimulator.js": "",
     "uupaa.console.js": "",
     "uupaa.valid.js":   "",
     "uupaa.help.js":    "",
@@ -50,7 +50,8 @@
     "uupaa.test.js":    "",
     "uupaa.watch.js":   "",
     "uupaa.plato.js":   "",
-    "uupaa.minify.js":  ""
+    "uupaa.minify.js":  "",
+    "uupaa.webmoduleutility.js": ""
   },
   "lib":            "./lib/",
   "main":           "./index.js",

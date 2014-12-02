@@ -8,7 +8,7 @@ return new Test("PageVisibilityEvent", {
         button:     false,
         both:       false,
     }).add([
-        testAPI,
+//        testAPI,
     ]).run().clone();
 
 function testAPI(test, pass, miss) {
