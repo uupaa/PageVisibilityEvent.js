@@ -1,6 +1,6 @@
 {
   "name": "uupaa.pagevisibilityevent.js",
-  "version": "0.8.23",
+  "version": "0.8.24",
   "description": "PageVisibility event dispatcher.",
   "url": "https://github.com/uupaa/PageVisibilityEvent.js",
   "keywords": [
@@ -31,6 +31,7 @@
     "hint": "jshint lib/*.js",
     "score": "node ../WebModule/run/score.js; open lint/plato/index.html",
     "patch": "node ../WebModule/run/patch.js",
+    "setup": "node ../WebModule/run/setup.js",
     "start": "cd ../; Python -m SimpleHTTPServer 8000 &",
     "stop": "killall -- Python -m SimpleHTTPServer 8000; exit 0"
   },

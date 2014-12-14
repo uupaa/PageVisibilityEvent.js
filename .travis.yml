@@ -4,7 +4,7 @@ node_js:
 before_script:
     - "pwd"
     - "cd .."
-    - "git clone https://github.com/uupaa/PageVisibilityEvent.git"
+    - "git clone https://github.com/uupaa/PageVisibilityEvent.js.git"
     - "cd -"
     - "npm install"
     - "npm install uupaa.closurecompiler.js"
