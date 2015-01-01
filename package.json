@@ -1,30 +1,22 @@
 {
   "name": "uupaa.pagevisibilityevent.js",
-  "version": "0.8.25",
+  "version": "0.8.26",
   "description": "PageVisibility event dispatcher.",
   "url": "https://github.com/uupaa/PageVisibilityEvent.js",
-  "keywords": [
-    "page visibility",
-    "DOM",
-    "Event",
-    "Browser",
-    "uupaa",
-    "WebModule",
-    "Unstable"
-  ],
+  "keywords": ["page visibility", "DOM", "Event", "Browser", "uupaa", "WebModule", "Unstable"],
   "repository": {
     "type": "git",
     "url": "https://github.com/uupaa/PageVisibilityEvent.js.git"
   },
   "scripts": {
     "sync": "node ../WebModule/run/sync.js; npm update; node ../WebModule/run/page.js",
-    "watch": "node ../WebModule/run/watch.js --verbose --action minify",
-    "minify": "node ../WebModule/run/minify.js --verbose --strict --keep --pretty",
-    "build": "node ../WebModule/run/minify.js --verbose --strict --module",
+    "min": "node ../WebModule/run/minify.js --verbose --strict --keep --pretty",
+    "build": "node ../WebModule/run/minify.js --verbose --strict --keep --module",
+    "watch": "node ../WebModule/run/watch.js --verbose --run hint",
     "page": "node ../WebModule/run/page.js --verbose",
-    "test": "npm run minify; npm run node; npm run browser",
-    "node": "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js",
-    "noded": "NODE_ENV=production NODE_PATH=lib node --debug-brk --harmony test/index.node.js",
+    "test": "npm run min; npm run node; npm run browser",
+    "node": "NODE_ENV=production NODE_PATH=lib node --harmony test/node.js",
+    "noded": "NODE_ENV=production NODE_PATH=lib node --debug-brk --harmony test/node.js",
     "browser": "open http://localhost:8000/PageVisibilityEvent.js/test/index.html",
     "sim": "node ../WebModule/run/sim.js http://localhost:8000/PageVisibilityEvent.js/test/index.html",
     "simx": "node ../WebModule/run/sim.js stop",
@@ -36,13 +28,12 @@
     "stop": "killall -- Python -m SimpleHTTPServer 8000; exit 0"
   },
   "webmodule": {
-    "source": [
-      "lib/PageVisibilityEvent.js"
-    ],
-    "output": "release/PageVisibilityEvent.min.js",
-    "target": [
-      "all"
-    ]
+    "develop": false,
+    "label": ["@dev"],
+    "browser": {
+      "source": ["lib/PageVisibilityEvent.js"],
+      "output": "release/PageVisibilityEvent.min.b.js"
+    }
   },
   "dependencies": {},
   "devDependencies": {},
