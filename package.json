@@ -1,6 +1,6 @@
 {
   "name": "uupaa.pagevisibilityevent.js",
-  "version": "0.8.26",
+  "version": "0.8.27",
   "description": "PageVisibility event dispatcher.",
   "url": "https://github.com/uupaa/PageVisibilityEvent.js",
   "keywords": ["page visibility", "DOM", "Event", "Browser", "uupaa", "WebModule", "Unstable"],
@@ -32,7 +32,7 @@
     "label": ["@dev"],
     "browser": {
       "source": ["lib/PageVisibilityEvent.js"],
-      "output": "release/PageVisibilityEvent.min.b.js"
+      "output": "release/PageVisibilityEvent.b.min.js"
     }
   },
   "dependencies": {},

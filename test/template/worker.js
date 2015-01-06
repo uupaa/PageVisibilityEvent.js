@@ -11,7 +11,7 @@ onmessage = function(event) {
         self.console.error = function() {};
     }
 
-    
+    __SCRIPT__
 
     self.postMessage({ TEST_ERROR_MESSAGE: self.TEST_ERROR_MESSAGE || "" });
 };

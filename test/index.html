@@ -1,15 +1,49 @@
-<!DOCTYPE html><html><head><title>test</title>
+<!DOCTYPE html><html><head><title>PageVisibilityEvent test</title>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="utf-8"></head><body>
 
-<script src="../../WebModule/lib/Reflection.js"></script>
-<script src="../../WebModule/lib/Console.js"></script>
-<script src="../../WebModule/lib/Valid.js"></script>
-<script src="../../WebModule/lib/Help.js"></script>
-<script src="../../WebModule/lib/Task.js"></script>
-<script src="../../WebModule/lib/Test.js"></script>
+<script src=".././test/wmtools.js"></script>
 <script src="../lib/PageVisibilityEvent.js"></script>
-<script src="../release/PageVisibilityEvent.min.b.js"></script>
+<script src="../release/PageVisibilityEvent.b.min.js"></script>
 <script src="./testcase.js"></script>
 
+
+<script>
+PageVisibilityEvent.on(function(pageHide) { // @arg Boolean:
+    document.title = pageHide ? "\u25a0"  // stop icon
+                              : "\u25b6"; // play icon
+});
+
+window.addEventListener("load",         function(event) { log(event.type); });
+window.addEventListener("unload",       function(event) { log(event.type); });
+window.addEventListener("beforeunload", function(event) { log(event.type); return "leave?"; });
+window.addEventListener("pageshow",     function(event) { log(event.type);
+    localStorage.setItem("pageshow", Date.now());
+});
+window.addEventListener("pagehide",     function(event) { log(event.type);
+    localStorage.setItem("pagehide", Date.now());
+});
+//window.addEventListener("focus",        function(event) { log(event.type); });
+//window.addEventListener("blur",         function(event) { log(event.type); });
+document.addEventListener("visibilitychange",       _visibilitychange);
+//document.addEventListener("webkitvisibilitychange", _visibilitychange);
+
+window.addEventListener("storage", function(event) { // StorageEvent = { key, oldValud, newValue, url, storageArea }
+    if (event.key === "pageshow" ||
+        event.key === "pagehide") {
+        log("onstorage:" + event.key + ":" + event.newValue);
+    }
+});
+
+function _visibilitychange(event) {
+    log(event.type + ":" + (document.webkitHidden ? "hidden" : "show"));
+}
+
+function log(msg) {
+    console.log(msg);
+    document.body.innerHTML += msg + "<br />";
+}
+</script>
+
 </body></html>
+

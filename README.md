@@ -19,7 +19,7 @@ PageVisibilityEvent.js is event dispatcher.
 ### Browser
 
 ```js
-<script src="lib/PageVisibilityEvent.js">
+<script src="lib/PageVisibilityEvent.js"></script>
 <script>
 // for Browser
 
