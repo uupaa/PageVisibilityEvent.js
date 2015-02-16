@@ -4,14 +4,11 @@
 
 <script src=".././test/wmtools.js"></script>
 <script src="../lib/PageVisibilityEvent.js"></script>
-<script src="../release/PageVisibilityEvent.b.min.js"></script>
-<script src="./testcase.js"></script>
-
 
 <script>
-PageVisibilityEvent.on(function(pageHide) { // @arg Boolean:
-    document.title = pageHide ? "\u25a0"  // stop icon
-                              : "\u25b6"; // play icon
+PageVisibilityEvent.on(function(hidden) { // @arg Boolean:
+    document.title = hidden ? "\u25a0"  // stop icon
+                            : "\u25b6"; // play icon
 });
 
 window.addEventListener("load",         function(event) { log(event.type); });

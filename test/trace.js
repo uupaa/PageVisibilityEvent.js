@@ -1,8 +1,8 @@
 var tabID = ("" + Date.now()).slice(-2);
 
 if (PageVisibilityEvent) {
-    PageVisibilityEvent.on(function(pageHide) { // @arg Boolean:
-        if (pageHide) {
+    PageVisibilityEvent.on(function(hiddenState) { // @arg Boolean:
+        if (hiddenState) {
             title = tabID + "\u25a0"; // stop icon
         } else {
             title = tabID + "\u25b6"; // play icon
