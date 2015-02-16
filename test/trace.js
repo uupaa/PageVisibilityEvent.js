@@ -1,12 +1,13 @@
 var tabID = ("" + Date.now()).slice(-2);
 
 if (PageVisibilityEvent) {
-    PageVisibilityEvent.on(function(hiddenState) { // @arg Boolean:
+    PageVisibilityEvent.on(function(hiddenState, eventType, suspendedTime) { // @arg Boolean:
         if (hiddenState) {
             title = tabID + "\u25a0"; // stop icon
         } else {
             title = tabID + "\u25b6"; // play icon
         }
+        console.log("suspendedTime: " + suspendedTime);
         document.title = title;
     });
 }
