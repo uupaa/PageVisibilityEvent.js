@@ -8,25 +8,21 @@ PageVisibilityEvent.js is event dispatcher.
 
 - [PageVisibilityEvent.js wiki](https://github.com/uupaa/PageVisibilityEvent.js/wiki/PageVisibilityEvent)
     - [PageVisibilityEvent W3C spec](http://www.w3.org/TR/page-visibility/)
-- [Development](https://github.com/uupaa/WebModule/wiki/Development)
 - [WebModule](https://github.com/uupaa/WebModule)
     - [Slide](http://uupaa.github.io/Slide/slide/WebModule/index.html)
     - [Development](https://github.com/uupaa/WebModule/wiki/Development)
 
-
-## How to use
+## Run on
 
 ### Browser
 
 ```js
 <script src="lib/PageVisibilityEvent.js"></script>
 <script>
-// for Browser
-
 PageVisibilityEvent.on(function(pageHide) { // @arg Boolean: true is page-hide
     console.log(pageHide ? "page hide"
                          : "page show");
 });
-
 </script>
 ```
+

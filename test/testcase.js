@@ -1,25 +1,40 @@
 var ModuleTestPageVisibilityEvent = (function(global) {
 
-//var _isNodeOrNodeWebKit = !!global.global;
-//var _runOnNodeWebKit =  _isNodeOrNodeWebKit && /native/.test(setTimeout);
-//var _runOnNode       =  _isNodeOrNodeWebKit && !/native/.test(setTimeout);
-//var _runOnWorker     = !_isNodeOrNodeWebKit && "WorkerLocation" in global;
-//var _runOnBrowser    = !_isNodeOrNodeWebKit && "document" in global;
+global["BENCHMARK"] = false;
 
-return new Test("PageVisibilityEvent", {
-        disable:    false,
-        browser:    true,
-        worker:     false,
-        node:       false,
-        button:     false,
-        both:       false,
+var test = new Test("PageVisibilityEvent", {
+        disable:    false, // disable all tests.
+        browser:    true,  // enable browser test.
+        worker:     true,  // enable worker test.
+        node:       true,  // enable node test.
+        nw:         true,  // enable nw.js test.
+        button:     true,  // show button.
+        both:       true,  // test the primary and secondary modules.
+        ignoreError:false, // ignore error.
+        callback:   function() {
+        },
+        errorback:  function(error) {
+        }
     }).add([
-//        testAPI,
-    ]).run().clone();
+    ]);
 
-function testAPI(test, pass, miss) {
-    test.done(pass());
+if (IN_BROWSER || IN_NW) {
+    test.add([
+        // browser and node-webkit test
+    ]);
+} else if (IN_WORKER) {
+    test.add([
+        // worker test
+    ]);
+} else if (IN_NODE) {
+    test.add([
+        // node.js and io.js test
+    ]);
 }
 
-})((this || 0).self || global);
+// --- test cases ------------------------------------------
+
+return test.run();
+
+})(GLOBAL);
 
