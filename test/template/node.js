@@ -1,6 +1,6 @@
 // PageVisibilityEvent test
 
-require("../lib/WebModuleGlobal.js");
+require("../lib/WebModule.js");
 
 __MODULES__
 __WMTOOLS__

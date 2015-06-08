@@ -2,7 +2,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="utf-8"></head><body>
 
-<script src="../lib/WebModuleGlobal.js"></script>
+<script src="../lib/WebModule.js"></script>
 
 __MODULES__
 __WMTOOLS__
@@ -11,7 +11,7 @@ __OUTPUT__
 __TEST_CASE__
 
 <script>
-PageVisibilityEvent.on(function(pageHide) { // @arg Boolean:
+WebModule.PageVisibilityEvent.on(function(pageHide) { // @arg Boolean:
     document.title = pageHide ? "\u25a0"  // stop icon
                               : "\u25b6"; // play icon
 });
