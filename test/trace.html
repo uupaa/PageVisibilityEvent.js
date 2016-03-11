@@ -9,10 +9,17 @@ span[value="visibilitychange:show"] { color: blue; }
 span[value="visibilitychange:hidden"] { color: red; }
 </style></head><body>
 
+<script src="../lib/WebModule.js"></script>
+<script>
+WebModule.verify  = true;
+WebModule.verbose = true;
+WebModule.publish = true;
+</script>
 <script src="../lib/PageVisibilityEvent.js"></script>
 <script src="./trace.js"></script>
 
-<p style="color:gray">Page visibility event trace.</p>
+<p style="color:gray">Page visibility event trace. (dump to DevTools console)</p>
+<p style="color:gray">Try to open or close the other tabs.</p>
 <p id="trace" style="color:gray"></p>
 
 </body></html>

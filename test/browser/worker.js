@@ -12,7 +12,11 @@ onmessage = function(event) {
         self.console.table = function() {};
     }
 
-    importScripts("../lib/WebModule.js");
+    importScripts("../../lib/WebModule.js");
+
+    WebModule.verify  = true;
+    WebModule.verbose = true;
+    WebModule.publish = true;
 
     
     

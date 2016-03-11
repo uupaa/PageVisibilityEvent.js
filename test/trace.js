@@ -1,13 +1,15 @@
 var tabID = ("" + Date.now()).slice(-2);
+var GHOST = "\uD83D\uDC7B";
+var BEER  = "\uD83C\uDF7B";
 
 if (PageVisibilityEvent) {
     PageVisibilityEvent.on(function(hiddenState, eventType, suspendedTime) { // @arg Boolean:
         if (hiddenState) {
-            title = tabID + "\u25a0"; // stop icon
+            title = tabID + GHOST; // stop icon
         } else {
-            title = tabID + "\u25b6"; // play icon
+            title = tabID + BEER; // play icon
         }
-        console.log("suspendedTime: " + suspendedTime);
+        console.log(JSON.stringify({ "hiddenState": hiddenState, "eventType": eventType, "suspendedTime": suspendedTime }, null, 2));
         document.title = title;
     });
 }
