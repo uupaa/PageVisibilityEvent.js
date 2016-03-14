@@ -3,8 +3,8 @@ var ModuleTestPageVisibilityEvent = (function(global) {
 var test = new Test(["PageVisibilityEvent"], { // Add the ModuleName to be tested here (if necessary).
         disable:    false, // disable all tests.
         browser:    true,  // enable browser test.
-        worker:     true,  // enable worker test.
-        node:       true,  // enable node test.
+        worker:     false,  // enable worker test.
+        node:       false,  // enable node test.
         nw:         true,  // enable nw.js test.
         el:         true,  // enable electron (render process) test.
         button:     true,  // show button.
