@@ -1,6 +1,6 @@
 {
   "name": "uupaa.pagevisibilityevent.js",
-  "version": "0.9.6",
+  "version": "1.0.0",
   "description": "PageVisibility event dispatcher.",
   "url": "https://github.com/uupaa/PageVisibilityEvent.js",
   "keywords": ["PageVisibility", "visibility", "hidden", "pageshow", "pagehide", "uupaa", "WebModule"],
